@@ -1,0 +1,17 @@
+import { AppointmentStatus, PaymentMethod, UserRole } from '@klinik/shared-types';
+export declare const APPOINTMENT_STATUS_FLOW: Record<AppointmentStatus, AppointmentStatus[]>;
+export declare const APPOINTMENT_STATUS_LABEL: Record<AppointmentStatus, string>;
+export declare const TIME_SLOTS: string[];
+export declare const SLOT_DURATION_OPTIONS: number[];
+export declare const DAY_NAMES_ID: string[];
+export declare const DAY_NAMES_SHORT: string[];
+export declare const MONTH_NAMES_ID: string[];
+export type Permission = 'dashboard:view' | 'appointment:view' | 'appointment:create' | 'appointment:update' | 'appointment:delete' | 'emr:view' | 'emr:create' | 'emr:update' | 'emr:view_own' | 'kasir:view' | 'kasir:create' | 'kasir:refund' | 'kasir:void' | 'report:view' | 'report:export' | 'masterdata:view' | 'masterdata:manage' | 'payroll:view' | 'payroll:manage' | 'payroll:view_own' | 'settings:view' | 'settings:manage' | 'users:view' | 'users:manage' | 'clinic:manage';
+export declare const ROLE_PERMISSIONS: Record<UserRole, Permission[]>;
+export declare const TREATMENT_CATEGORIES: string[];
+export declare const BLOOD_TYPES: string[];
+export declare const PAYMENT_METHOD_LABEL: Record<PaymentMethod, string>;
+export declare const RM_FORMAT = "RM-YYYYMMDD-XXXXX";
+export declare const INVOICE_FORMAT = "INV-YYYYMMDD-XXX";
+export { ICD10_DENTAL, ICD9_DENTAL, searchIcd10, searchIcd9, ICD10_CATEGORIES, ICD9_CATEGORIES, } from './icd-dental';
+export type { Icd10Item, Icd9Item } from './icd-dental';
