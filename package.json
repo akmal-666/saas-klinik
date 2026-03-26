@@ -1,0 +1,43 @@
+{
+  "name": "klinik-saas",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev": "turbo dev",
+    "dev:web": "npm run dev --workspace=apps/web",
+    "dev:backend": "npm run dev --workspace=apps/backend",
+    "build": "turbo build",
+    "lint": "turbo lint",
+    "type-check": "turbo type-check",
+    "test": "turbo test",
+    "setup": "bash setup.sh",
+    "env:sync": "cp .env.local apps/web/.env.local && cp .env.local apps/backend/.env.local && echo 'env synced'",
+    "clean": "find . -name '.turbo' -type d -not -path '*/node_modules/*' | xargs rm -rf; find . -name '.next' -type d | xargs rm -rf; find . -name 'dist' -type d -not -path '*/node_modules/*' | xargs rm -rf",
+    "postinstall": "rm -rf apps/backend/node_modules/rxjs 2>/dev/null; echo \"rxjs deduped\""
+  },
+  "devDependencies": {
+    "turbo": "^2.3.0",
+    "typescript": "^5.4.5",
+    "@types/node": "^20.12.7",
+    "eslint": "^8.57.0",
+    "prettier": "^3.2.5",
+    "rxjs": "^7.8.1",
+    "reflect-metadata": "^0.2.2"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
+  "packageManager": "npm@10.5.0",
+  "dependencies": {
+    "rxjs": "7.8.1",
+    "reflect-metadata": "0.2.2"
+  },
+  "overrides": {
+    "rxjs": "^7.8.1"
+  }
+}

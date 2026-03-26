@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalEnv": [
+    "NODE_ENV","PORT","DATABASE_URL",
+    "SUPABASE_URL","SUPABASE_ANON_KEY","SUPABASE_SERVICE_ROLE_KEY",
+    "JWT_SECRET","JWT_EXPIRES_IN","REFRESH_TOKEN_EXPIRES_IN",
+    "NEXT_PUBLIC_API_URL","NEXT_PUBLIC_SUPABASE_URL","NEXT_PUBLIC_SUPABASE_ANON_KEY",
+    "NEXTAUTH_SECRET","REDIS_URL",
+    "WHATSAPP_API_URL","WHATSAPP_API_KEY",
+    "SATUSEHAT_BASE_URL","SATUSEHAT_CLIENT_ID","SATUSEHAT_CLIENT_SECRET"
+  ],
+  "tasks": {
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": [".next/**","!.next/cache/**","dist/**"]
+    },
+    "dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "lint": { "outputs": [] },
+    "type-check": { "dependsOn": ["^build"], "outputs": [] },
+    "test": { "dependsOn": ["^build"], "outputs": ["coverage/**"] }
+  }
+}

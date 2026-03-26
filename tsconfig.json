@@ -1,0 +1,10 @@
+{
+  "compilerOptions": {
+    "strict": false,
+    "skipLibCheck": true,
+    "paths": {
+      "@klinik/shared-types": ["./packages/shared-types/src"],
+      "@klinik/shared-constants": ["./packages/shared-constants/src"]
+    }
+  }
+}
